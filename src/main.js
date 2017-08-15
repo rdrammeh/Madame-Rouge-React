@@ -11,9 +11,9 @@ class Main extends Component {
       <div>
         <Switch>
           <Route exact path="/" component={Homepage}/>
+          <Route path="/users/new" component={NewUser}/>
           <Route exact path="/users" component={Recipes}/>
           <Route exact path="/recipes" component={Recipes}/>
-          <Route path="/users/new" component={NewUser}/>
           <Route path="/sessions/new" component={Recipes}/>
           <Route path="/recipes/:id" component={Show}/>
         </Switch>
