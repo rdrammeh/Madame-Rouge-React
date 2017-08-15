@@ -5,22 +5,6 @@ import Salad from './Salad';
 import Entree from './Entree';
 import Dessert from './Dessert';
 
-let menu =  {recipes :[
-  { id: 1,
-    name: "chicken",
-    type: "app"
-}, { id: 2,
-      name: "lettuce",
-      type: "salad"
-},{ id: 3,
-    name: "steak",
-    type: "entree"
-},
-{ id: 4,
-    name: "chocolate",
-    type: "dessert"
-},] }
-
 export default class Homepage extends Component {
   constructor(){
     super()
@@ -28,28 +12,33 @@ export default class Homepage extends Component {
       app: [],
       salad: [],
       entree: [],
-      dessert: []
-
+      dessert: [],
+      start_at: '',
+      end_at:''
     }
   }
 
 filterMenuItem(menu, type){
     var filterItem = menu.filter(function findApps(recipe){
-      return recipe.type === type})
+      return recipe.dish_type === type})
     return filterItem
   }
 
-  componentWillMount(){
-    // axios.get('')
-    // .then((response) => {
-    //   this.setState({app: filterMenu(response.data)})
-    // })
+  componentDidMount(){
+    axios.get('http://localhost:8080/')
+    .then((response) => {
+      let menu = response.data.menu_items
+      this.setState(
+        {
+          app: this.filterMenuItem(menu,"appetizer"),
+          salad: this.filterMenuItem(menu,"salad"),
+          dessert: this.filterMenuItem(menu,"desserts"),
+          entree: this.filterMenuItem(menu,"main course"),
+          start_at: response.data.menu.start_at,
+          end_at: response.data.menu.end_at
+          })
+    })
 
-    //This wil need to added into the axios call. it is currently only here because of dummy data
-    this.setState({salad: this.filterMenuItem(menu.recipes,"salad")})
-    this.setState({dessert: this.filterMenuItem(menu.recipes,"dessert")})
-    this.setState({entree: this.filterMenuItem(menu.recipes,"entree")})
-    this.setState({app: this.filterMenuItem(menu.recipes,"app")})
   }
 
   render() {
@@ -67,6 +56,7 @@ filterMenuItem(menu, type){
             <h2>Dessert</h2>
               <Dessert desserts={this.state.dessert}/>
           </section>
+          <h2 id="menu-period">Available from {this.state.start_at} to {this.state.end_at}</h2>
         </div>
       </div>
     );
