@@ -12,12 +12,14 @@ import registerServiceWorker from './registerServiceWorker';
 ReactDOM.render(
   (<BrowserRouter>
     <Switch>
-      <Route exact path="/" component={Homepage}/>
-      <Route path="/users/new" component={NewUser}/>
-      <Route path="/recipes" component={Recipes}/>
-      <Route path="/users" component={Recipes}/>
-      <Route path="/sessions/new" component={Recipes}/>
-      <Route path="/recipes/:id" component={Show}/>
+      <Route path="/layout/header" component={header}>
+        <Route exact path="/" component={Homepage}/>
+        <Route path="/users/new" component={NewUser}/>
+        <Route path="/recipes" component={Recipes}/>
+        <Route path="/users" component={Recipes}/>
+        <Route path="/sessions/new" component={Recipes}/>
+        <Route path="/recipes/:id" component={Show}/>
+    </Route>
     </Switch>
   </BrowserRouter>
   ), document.getElementById('root'));
