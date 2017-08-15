@@ -12,8 +12,7 @@ class Show extends Component {
     }
   }
   componentDidMount(){
-
-     axios.get('http://localhost:8080/recipes/2')
+     axios.get('http://localhost:8080/recipes/'+this.props.match.params.id)
        .then((response)=>{
          this.setState({recipe: response.data.recipe, ingredients: response.data.ingredients, author: response.data.author})
        })
