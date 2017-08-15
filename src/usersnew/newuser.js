@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Input from './registrationform';
 import axios from 'axios';
 import querystring from 'querystring';
-import {Link} from 'react-router-dom'
+import {Link, Redirect} from 'react-router-dom'
 export default class NewUser extends Component {
   constructor(){
     super()
@@ -12,15 +12,19 @@ export default class NewUser extends Component {
    createUser(e){
      e.preventDefault();
      axios.post('http://localhost:8080/users',
-     {user:{username:this.refs.username.value, email: this.refs.email.value, password: this.refs.password.value}})
+     {user:{username:this.refs.username.value, email: this.refs.email.value, password: this.refs.password.value} }  )
      .then((response) => {
-       debugger
        if (response.status=== 200) {
-         sessionStorage.setItem("userId", response.data.id)
+         sessionStorage.setItem("userId", response.data.id);
+         this.props.history.push('/');
        }
      }
-    )
+   )
+   .catch((error) => {
+     alert("Something went wrong. Call IT!!!")
+   })
    }
+
   render() {
     return (
       <div>
