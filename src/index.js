@@ -3,24 +3,20 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import {Route, IndexRoute, Switch} from 'react-router';
 import {BrowserRouter, browserHistory} from 'react-router-dom';
+import App from './App';
 import Recipes from './recipe_index/Recipes';
 import Homepage from './Homepage/homepage'
 import Show from './recipeshow/show'
 import NewUser from './usersnew/newuser'
 import registerServiceWorker from './registerServiceWorker';
+import Header from './header';
+
 
 ReactDOM.render(
   (<BrowserRouter>
-    <Switch>
-      <Route path="/layout/header" component={header}>
-        <Route exact path="/" component={Homepage}/>
-        <Route path="/users/new" component={NewUser}/>
-        <Route path="/recipes" component={Recipes}/>
-        <Route path="/users" component={Recipes}/>
-        <Route path="/sessions/new" component={Recipes}/>
-        <Route path="/recipes/:id" component={Show}/>
-    </Route>
-    </Switch>
+    <div>
+       <App/>
+   </div>
   </BrowserRouter>
   ), document.getElementById('root'));
 
