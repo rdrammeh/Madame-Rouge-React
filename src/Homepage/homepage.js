@@ -45,7 +45,7 @@ filterMenuItem(menu, type){
     //   this.setState({app: filterMenu(response.data)})
     // })
 
-    //This will need to added into the axios call. it is currently only here because of dummy data
+    //This wil need to added into the axios call. it is currently only here because of dummy data
     this.setState({salad: this.filterMenuItem(menu.recipes,"salad")})
     this.setState({dessert: this.filterMenuItem(menu.recipes,"dessert")})
     this.setState({entree: this.filterMenuItem(menu.recipes,"entree")})
