@@ -54,18 +54,18 @@ filterMenuItem(menu, type){
 
   render() {
     return (
-      <div className="App">
+      <div className="home-bg">
         <div className="menu-card">
           <section className="menu-list">
-          <h1>This Week's Menu </h1>
-          <h2>Appetizer</h2>
-            <Appetizer apps={this.state.app}/>
-          <h2>Salad</h2>
-            <Salad salads={this.state.salad}/>
-          <h2>Entree</h2>
-            <Entree entrees={this.state.entree}/>
-          <h2>Dessert</h2>
-            <Dessert desserts={this.state.dessert}/>
+            <h1>This Week's Menu </h1>
+            <h2>Appetizer</h2>
+              <Appetizer apps={this.state.app}/>
+            <h2>Salad</h2>
+              <Salad salads={this.state.salad}/>
+            <h2>Entree</h2>
+              <Entree entrees={this.state.entree}/>
+            <h2>Dessert</h2>
+              <Dessert desserts={this.state.dessert}/>
           </section>
         </div>
       </div>
