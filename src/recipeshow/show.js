@@ -50,30 +50,6 @@ class Show extends Component {
             </TabPanel>
           </Tabs>
         </div>
-      <div>
-        <ul id="recipe-wrapper">
-          <li>Name: {name}</li>
-          <li>Dish type: {dish_type}</li>
-          <li>Author: {username}</li>
-          <li>Prep time: {preptime}</li>
-          <li>Difficulty: {difficulty}</li>
-        </ul>
-        <Tabs>
-          <TabList id="tabular">
-            <Tab>Ingredients</Tab>
-            <Tab>Directions</Tab>
-          </TabList>
-          <TabPanel>
-            <h2>Ingredients</h2>
-            {ingredients.map(function(item, index){
-              return <p key={ index }>{item.amount} {item.measurement} of {item.name} </p>
-            })}
-          </TabPanel>
-          <TabPanel>
-            <h2>Directions</h2>
-            <p>{directions}</p>
-          </TabPanel>
-        </Tabs>
       </div>
     );
   }
