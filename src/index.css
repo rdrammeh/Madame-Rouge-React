@@ -69,7 +69,6 @@ ul {
 }
 
 .react-tabs [role=tab][aria-selected=true] {
-	background: #fff;
 	border-color: #aaa;
 	border-radius: 5px 5px 0 0;
 	-moz-border-radius: 5px 5px 0 0;
