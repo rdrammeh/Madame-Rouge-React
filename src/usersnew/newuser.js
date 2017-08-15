@@ -29,18 +29,18 @@ export default class NewUser extends Component {
       <div>
         <form onSubmit={this.createUser} >
           <div className="Input">
-            <input ref="username" className="username-signup" required type="text" />
             <label htmlFor="username">Username</label>
+            <input ref="username" className="username-signup" required type="text" />
           </div>
           <div>
-            <input ref="email" className="email-signup" required type="email" />
             <label htmlFor="email">Email</label>
+            <input ref="email" className="email-signup" required type="email" />
           </div>
           <div>
-            <input ref="password" className="password-signup" required type="password" />
             <label htmlFor="password">Password</label>
+            <input ref="password" className="password-signup" required type="password" />
           </div>
-					<input type="submit" value="Register" />
+          <button className="btn waves-effect waves-light" type="submit" name="action">Register</button>
 				</form>
       </div>
     );
