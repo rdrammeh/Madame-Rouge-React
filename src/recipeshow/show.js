@@ -8,13 +8,14 @@ class Show extends Component {
     this.state = {
       recipe: null,
       ingredients: null,
-      author: null,
+      user: null,
+      items: null
     }
   }
   componentDidMount(){
      axios.get('http://localhost:8080/recipes/'+this.props.match.params.id)
        .then((response)=>{
-         this.setState({recipe: response.data.recipe, ingredients: response.data.ingredients, author: response.data.author})
+         this.setState({recipe: response.data.recipe, ingredients: response.data.ingredients, user: response.data.user, items: response.data.items})
        })
    }
 
@@ -22,33 +23,36 @@ class Show extends Component {
     let ingredients = this.state.ingredients? this.state.ingredients : [];
     let recipe = this.state.recipe
     let {directions, difficulty, preptime, name, dish_type} = this.state.recipe ? this.state.recipe : '';
-    let {username} = this.state.author ? this.state.author : '';
+    let {user} = this.state ? this.state : '';
+    let items = this.state.items ? this.state.items : [];
     return (
       <div className="recipe-show-page">
         <div className="recipe-show-card">
           <ul id="recipe-wrapper">
-            <li>Name: {name}</li>
-            <li>Dish type: {dish_type}</li>
-            <li>Author: {username}</li>
-            <li>Prep time: {preptime}</li>
-            <li>Difficulty: {difficulty}</li>
+            <li className="recipe-title">{name}</li>
           </ul>
           <Tabs>
-            <TabList id="tabular">
-              <Tab>Ingredients</Tab>
-              <Tab>Directions</Tab>
-            </TabList>
-            <TabPanel>
-              <h2>Ingredients</h2>
-              {ingredients.map(function(item, index){
-                return <p key={ index }>{item.amount} {item.measurement} of {item.name} </p>
-              })}
-            </TabPanel>
-            <TabPanel>
-              <h2>Directions</h2>
-              <p>{directions}</p>
-            </TabPanel>
-          </Tabs>
+            <div className="tabs-border">
+              <TabList id="tabular">
+                <Tab>Ingredients <br/>Difficulty: {difficulty}</Tab>
+                <Tab>Directions <br/>(Prep Time: {preptime}min)</Tab>
+              </TabList>
+              <div className="recipe-show-tab">
+              <TabPanel>
+                <h2>Ingredients</h2>
+                {ingredients.map(function(ingredient, index){
+                  return <p key={ index }>{ingredient.amount} {ingredient.measurement} of {items[index].name} </p>
+                })}
+              </TabPanel>
+              <TabPanel>
+                <h2>Directions</h2>
+                <p>{directions}</p>
+              </TabPanel>
+          </div>
+          <p className="float-left">Creator: {user}</p>
+           <p className="right float-left">Dish type: {dish_type}</p>
+        </div>
+        </Tabs>
         </div>
       </div>
     );

@@ -5,6 +5,8 @@ import Salad from './Salad';
 import Entree from './Entree';
 import Dessert from './Dessert';
 import {Button, Icon} from 'react-materialize';
+import '../index.css';
+
 
 export default class Homepage extends Component {
   constructor(){
