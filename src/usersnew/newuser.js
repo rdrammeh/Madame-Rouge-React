@@ -1,35 +1,39 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import querystring from 'querystring'
-
+import querystring from 'querystring';
+import {Link} from 'react-router-dom'
 export default class NewUser extends Component {
   constructor(){
     super()
+    this.createUser = this.createUser.bind(this);
    }
 
    createUser(e){
      e.preventDefault();
-     debugger;
      axios.post('http://localhost:8080/users',
-     querystring.stringify({user: ''}))
+     {user:{username:this.refs.username.value, email: this.refs.email.value, password: this.refs.password.value}})
      .then((response) => {
-       this.props.addTweet(response.data);
-     })
+       debugger
+       if (response.status=== 200) {
+         sessionStorage.setItem("userId", response.data.id)
+       }
+     }
+    )
    }
   render() {
     return (
       <div>
         <form onSubmit={this.createUser} >
           <div className="Input">
-            <input ref="username-signup" className="username-signup" required type="text" />
+            <input ref="username" className="username-signup" required type="text" />
             <label htmlFor="username">Username</label>
           </div>
           <div>
-            <input ref="email-signup" className="email-signup" required type="email" />
+            <input ref="email" className="email-signup" required type="email" />
             <label htmlFor="email">Email</label>
           </div>
           <div>
-            <input ref="password-signup" className="password-signup" required type="password" />
+            <input ref="password" className="password-signup" required type="password" />
             <label htmlFor="password">Password</label>
           </div>
 					<input type="submit" value="Register" />
@@ -38,3 +42,8 @@ export default class NewUser extends Component {
     );
   }
 }
+// {user:{username:this.refs.username.value, email: this.refs.email.value, password: this.refs.password.value}}
+// {user:{username:,
+// this.refs.username.value
+// this.refs.email.value
+// this.refs.password.value
