@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Input from './registrationform';
 import axios from 'axios';
 import querystring from 'querystring';
 import {Link, Redirect} from 'react-router-dom'
