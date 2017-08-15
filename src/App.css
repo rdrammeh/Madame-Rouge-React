@@ -11,7 +11,7 @@
   background-color: #222;
   height: 150px;
   padding: 20px;
-  color: white;
+  color: blue;
 }
 
 .App-intro {
@@ -21,4 +21,40 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+#tabular {
+  color: black;
+}
+
+
+.react-tabs [role=tablist] {
+	border-bottom: 1px solid #aaa;
+	margin: 0 0 10px;
+	padding: 0;
+}
+
+.react-tabs [role=tab] {
+	display: inline-block;
+	border: 1px solid transparent;
+	border-bottom: none;
+	bottom: -1px;
+	position: relative;
+	list-style: none;
+	padding: 6px 12px;
+	cursor: pointer;
+	position: relative;
+}
+
+.react-tabs [role=tab][aria-selected=true] {
+	background: #fff;
+	border-color: #aaa;
+	border-radius: 5px 5px 0 0;
+	-moz-border-radius: 5px 5px 0 0;
+	-webkit-border-radius: 5px 5px 0 0;
+}
+
+
+#recipe-wrapper {
+  list-style-type: none;
 }
