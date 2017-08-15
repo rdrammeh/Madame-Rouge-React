@@ -26,7 +26,7 @@ export default class NewUser extends Component {
 
   render() {
     return (
-      <div>
+      <div className="new-user container">
         <form onSubmit={this.createUser} >
           <div className="Input">
             <label htmlFor="username">Username</label>
