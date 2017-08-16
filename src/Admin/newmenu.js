@@ -26,7 +26,7 @@ export default class MenuForm extends Component {
     return filteredRecipe
   };
   componentDidMount(){
-    axios.get('http://localhost:8080/recipes')
+    axios.get('https://madamerouge8080.herokuapp.com/recipes')
     .then((response) => {
       let recipes = response.data
       this.setState({
@@ -72,7 +72,7 @@ export default class MenuForm extends Component {
     axiosMenuItems.push({menu_item: this.refs.salad.value})
     axiosMenuItems.push({menu_item: this.refs.entree.value})
     axiosMenuItems.push({menu_item: this.refs.dessert.value})
-    axios.post('http://localhost:8080/menus', {menu: {start_at: this.refs.start_at.value},menu_items: axiosMenuItems})
+    axios.post('https://madamerouge8080.herokuapp.com/menus', {menu: {start_at: this.refs.start_at.value},menu_items: axiosMenuItems})
     .then((response)=>{
       if (response.status === 204) {
         this.props.history.push('/admin');

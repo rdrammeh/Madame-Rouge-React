@@ -11,7 +11,7 @@ export default class Login extends Component {
 
   login(e){
     e.preventDefault();
-    axios.post('http://localhost:8080/sessions',
+    axios.post('https://madamerouge8080.herokuapp.com/sessions',
     {user:{email: this.refs.email.value, password: this.refs.password.value}})
     .then((response) => {
       if (response.status === 200) {

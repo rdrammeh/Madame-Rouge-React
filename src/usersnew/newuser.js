@@ -10,7 +10,7 @@ export default class NewUser extends Component {
 
    createUser(e){
      e.preventDefault();
-     axios.post('http://localhost:8080/users',
+     axios.post('https://madamerouge8080.herokuapp.com/users',
      {user:{username:this.refs.username.value, email: this.refs.email.value, password: this.refs.password.value} }  )
      .then((response) => {
        if (response.status=== 200) {

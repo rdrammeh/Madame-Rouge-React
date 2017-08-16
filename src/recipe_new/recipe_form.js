@@ -33,7 +33,8 @@ export default class RecipeForm extends Component {
         amount: this.refs.amount.value,
         measurement: this.refs.measurement.value,
         item: this.refs.item.value})
-    axios.post('http://localhost:8080/recipes', {recipe: {
+
+    axios.post('https://madamerouge8080.herokuapp.com/recipes', {recipe: {
       name: this.refs.name.value,
       dish_type: this.refs.dish_type.value,
       difficulty: this.refs.difficulty.value,
@@ -127,9 +128,9 @@ export default class RecipeForm extends Component {
           <br/>
           <br/>
           <br/>
+          <input className="btn btn-primary" type="submit" value="Make a new recipe"/>
         </form>
       </section>
-      <input className="btn btn-primary" type="submit" value="Make a new recipe"/>
     </div>
     );
   }

@@ -10,7 +10,7 @@ class ShowUser extends Component {
     }
   }
   componentDidMount(){
-     axios.get('http://localhost:8080/users/4')
+     axios.get('https://madamerouge8080.herokuapp.com/users/'+sessionStorage.userId)
        .then((response)=>{
 
          this.setState({user: response.data.user, recipes: response.data.recipes})
@@ -20,7 +20,7 @@ class ShowUser extends Component {
   render() {
     let {username} = this.state.user? this.state.user : '';
 
-    let {recipes} = this.state.recipes ? this.state.recipes : [];
+
     return (
       <div className="user-show-page">
         <p>Welcome {username}</p>

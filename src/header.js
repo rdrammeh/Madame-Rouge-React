@@ -4,8 +4,8 @@ import './App.css'
 import axios from 'axios'
 class Header extends Component {
   logOut(){
-    debugger
-    axios.get('http://localhost:8080/logout')
+
+    axios.get('https://madamerouge8080.herokuapp.com/logout')
     .then((response) =>{
       sessionStorage.clear()
       }
@@ -29,11 +29,10 @@ class Header extends Component {
       return (
           <header>
             <Navbar brand='Madame Rouge' right className="transparent z-depth-0">
+              <NavItem href="/recipes/new">New Recipe</NavItem>
               <NavItem href='/recipes'>Recipes</NavItem>
               <NavItem href={`/users/${sessionStorage.userId}`}>Profile</NavItem>
-              {/* Future feature */}
               <NavItem onClick={this.logOut} href="/">Log Out</NavItem>
-              <NavItem href="/recipes/new">New Recipe</NavItem>
             </Navbar>
           </header>
       );

@@ -15,7 +15,7 @@ export default class Recipes extends Component {
     this.changeRecipes = this.changeRecipes.bind(this)
   };
   componentDidMount(){
-    axios.get('http://localhost:8080/recipes')
+    axios.get('https://madamerouge8080.herokuapp.com/recipes')
     .then((response)=> {
       this.setState({basestate: response.data})
       this.changeRecipes("appetizer")

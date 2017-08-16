@@ -28,7 +28,7 @@ filterMenuItem(menu, type){
   }
 
   componentDidMount(){
-    axios.get('http://localhost:8080/')
+    axios.get('https://madamerouge8080.herokuapp.com/')
     .then((response) => {
       let menu = response.data.menu_items
       this.setState(
