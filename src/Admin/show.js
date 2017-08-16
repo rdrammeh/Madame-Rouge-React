@@ -18,13 +18,21 @@ componentDidMount(){
     let currentmenu = response.data.menu_items.map(function(item){
       return {id: item.id, name: item.name}
     })
-    console.log(currentmenu);
     this.setState(
       { currentmenu: currentmenu }
     )
-
+    })
+  axios.get('http://localhost:8080/madame')
+  .then((response) => {
+    let allmenus = response.data.map(function(menu) {
+      return {id: menu.id, start_at: menu.start_at }
+    })
+    this.setState(
+      { allmenus: allmenus}
+    )
   })
 }
+
   render() {
     return (
       <div>
@@ -35,7 +43,8 @@ componentDidMount(){
         </div>
 
         <div id="admin_menus">
-          <AdminMenus />
+          <p><i>Menu History</i></p>
+          <AdminMenus allmenus={this.state.allmenus}/>
         </div>
       </div>
     );

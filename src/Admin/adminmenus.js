@@ -3,9 +3,11 @@ import React, { Component } from 'react';
 export default class AdminMenus extends Component{
   render() {
     return (
-
-      <h1>Hiya</h1>
-
+      <div>
+        <ul>
+          {this.props.allmenus.map(menu => <li key={menu.id}>{menu.start_at}</li>)}
+        </ul>
+      </div>
     )
   }
 }
