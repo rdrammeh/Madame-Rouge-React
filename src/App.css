@@ -268,13 +268,16 @@ a {
   height: 85%;
 }
 
+
 button.btn, input{
+
   background: #F63F23;
 }
 
 button.btn:hover{
   background: #F63F23;
 }
+
 
 .btn:focus, .btn-large:focus, .btn-floating:focus{
     background: #F63F23;
@@ -286,4 +289,5 @@ button.btn:hover{
 
 .btn, .btn-large{
     background: #F63F23;
+
 }
