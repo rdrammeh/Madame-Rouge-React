@@ -15,6 +15,3 @@ ReactDOM.render(
   ), document.getElementById('root'));
 
 registerServiceWorker();
-
-
-// ingredients: [{amount: [amounts, amount]}, measurement: []]

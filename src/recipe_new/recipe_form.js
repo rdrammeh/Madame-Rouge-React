@@ -40,7 +40,7 @@ export default class RecipeForm extends Component {
       directions: this.refs.directions.value,
       preptime: this.refs.preptime.value,
       user: {}
-    }, ingredients: axiosIngredients, user: sessionStorage.userId})
+    }, ingredients: axiosIngredients})
       .then((response) =>{
         if (response.status === 204) {
           this.props.history.push('/recipes');
