@@ -306,3 +306,7 @@ button.btn:hover{
   background: linear-gradient(to top, rgba(0,0,0,0)5%, rgba(0,0,0,0.9));
   height: 85%;
 }
+
+.user-show-page{
+  color:white;
+}
