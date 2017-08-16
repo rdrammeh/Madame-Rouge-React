@@ -8,20 +8,36 @@ export default class AdminShow extends Component{
     super()
     this.state = {
       allmenus: [],
-      currentmenu: []
+      currentmenu: [],
+      activemenu: []
     }
+    this.onMenuClick = this.onMenuClick.bind(this)
   }
+onMenuClick(id){
+  axios.get(`http://localhost:8080/menus/`+ id)
+  .then((response) => {
+    let activemenu = response.data.menu_items.map(function(item){
+      return {id: item.id, name: item.name}
+    })
+      this.setState(
+        { activemenu: activemenu }
+      )
+  })
+
+}
 
 componentDidMount(){
+
   axios.get('http://localhost:8080')
   .then((response) => {
     let currentmenu = response.data.menu_items.map(function(item){
-      return {id: item.id, name: item.name}
+      return {id: item.id, name: item.name, dish_type: item.dish_type}
     })
     this.setState(
-      { currentmenu: currentmenu }
+      { currentmenu: currentmenu, activemenu: currentmenu }
     )
-    })
+  })
+
   axios.get('http://localhost:8080/madame')
   .then((response) => {
     let allmenus = response.data.map(function(menu) {
@@ -39,12 +55,12 @@ componentDidMount(){
         <h1>Welcome, Madame Rouge</h1>
         <div id="admin_current_menu">
           <p><i>Current Menu</i></p>
-          <AdminCurrentMenu menus={this.state.currentmenu} />
+          <AdminCurrentMenu menus={this.state.activemenu} />
         </div>
 
         <div id="admin_menus">
-          <p><i>Menu History</i></p>
-          <AdminMenus allmenus={this.state.allmenus}/>
+          <p><i>Weekly Menu History</i></p>
+          <AdminMenus selectmenu={this.onMenuClick} allmenus={this.state.allmenus}/>
         </div>
       </div>
     );
