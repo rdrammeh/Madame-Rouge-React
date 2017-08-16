@@ -1,7 +1,16 @@
 import React, { Component } from 'react';
 import { Navbar, NavItem } from 'react-materialize';
 import './App.css'
+import axios from 'axios'
 class Header extends Component {
+  logOut(){
+    debugger
+    axios.get('http://localhost:8080/logout')
+    .then((response) =>{
+      sessionStorage.clear()
+      }
+    )
+  }
   render() {
 
       if(sessionStorage.length === 0 ){
@@ -23,7 +32,7 @@ class Header extends Component {
               <NavItem href='/recipes'>Recipes</NavItem>
               <NavItem href={`/users/${sessionStorage.userId}`}>Profile</NavItem>
               {/* Future feature */}
-              {/* <NavItem href='/sessions/new'>Log Out</NavItem> */}
+              <NavItem onClick={this.logOut} href="/">Log Out</NavItem>
               <NavItem href="/recipes/new">New Recipe</NavItem>
             </Navbar>
           </header>

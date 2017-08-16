@@ -5,9 +5,6 @@ export default class AdminMenus extends Component{
     super()
     this.clickHandler = this.clickHandler.bind(this)
   }
-
-
-
   clickHandler(event){
     event.preventDefault()
     this.props.selectmenu(event.target.id)

@@ -268,11 +268,9 @@ a {
   height: 85%;
 }
 
-input.btn{
-  background: #F63F23;
-}
 
-button.btn{
+button.btn, input{
+
   background: #F63F23;
 }
 
@@ -280,18 +278,11 @@ button.btn:hover{
   background: #F63F23;
 }
 
-.user-log-bg {
-  margin: 0;
-  padding: 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  min-height: 100%;
-  position: fixed;
-  background: linear-gradient(0deg,rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url("imgs/pizza.jpg");
-  background-size: cover;
+
+.btn:focus, .btn-large:focus, .btn-floating:focus{
+    background: #F63F23;
 }
+
 
 .user-login-form {
   height: 100vh;
@@ -305,6 +296,14 @@ button.btn:hover{
   left: 10%;
   background: linear-gradient(to top, rgba(0,0,0,0)5%, rgba(0,0,0,0.9));
   height: 85%;
+}
+
+.btn:hover, .btn-large:hover {
+  background: #F63F23;
+}
+
+.btn, .btn-large{
+    background: #F63F23;
 }
 
 .user-show-page{
