@@ -89,125 +89,130 @@ export default class MenuForm extends Component {
             <input ref="start_at" type="date" />
           </label>
           <br/>
-          <div>
-            <button type="button" onClick={() =>{this.addMenuItem("appetizer")}}>Add Appetizer</button>
-            <br/>
-            <label> Appetizers:
-              <select ref="appetizer"  className="browser-default">
-                {this.state.appetizers.map((appetizer,i) => {
-                  return (<option key={i} value={appetizer.name}>{appetizer.name}</option> )
-                }
-              )
-            }
-              </select>
+          <div className="row">
+            <div className="col s3">
               <br/>
-              {this.state.menuAppetizers.map((something, i)=> {
-                return (
-                  <div>
-                    <select ref="appetizer"  className="browser-default">
-                      {this.state.appetizers.map((appetizer,i) => {
-                        return (<option value={appetizer.name}>{appetizer.name}</option> )
-                          }
-                        )
-                      }
-                    </select>
-                    <br/>
-                  </div>)
+              <label> Appetizers:
+                <select ref="appetizer"  className="browser-default">
+                  {this.state.appetizers.map((appetizer,i) => {
+                    return (<option key={i} value={appetizer.name}>{appetizer.name}</option> )
                   }
                 )
               }
-            </label>
-          </div>
-          <div>
-            <button type="button" onClick={() =>{this.addMenuItem("salad")}}>Add Salad</button>
-            <br/>
-            <label> Salads:
-              <select ref="salad"  className="browser-default">
-                {this.state.salads.map((salad,i) => {
-                  return (<option key={i} value={salad.name}>{salad.name}</option> )
+                </select>
+                <br/>
+                {this.state.menuAppetizers.map((something, i)=> {
+                  return (
+                    <div>
+                      <select ref="appetizer"  className="browser-default">
+                        {this.state.appetizers.map((appetizer,i) => {
+                          return (<option value={appetizer.name}>{appetizer.name}</option> )
+                            }
+                          )
+                        }
+                      </select>
+                      <br/>
+                    </div>)
+                    }
+                  )
                 }
-              )
-            }
-              </select>
+              </label>
+              <button className="btn btn-primary" type="button" onClick={() =>{this.addMenuItem("appetizer")}}>Add Appetizer</button>
+            </div>
+            <div className="col s3">
               <br/>
-              {this.state.menuSalads.map((something, i)=> {
-                return (
-                  <div>
-                    <select ref="salad"  className="browser-default">
-                      {this.state.salads.map((salad,i) => {
-                        return (<option value={salad.name}>{salad.name}</option> )
-                          }
-                        )
-                      }
-                    </select>
-                    <br/>
-                  </div>)
+              <label> Salads:
+                <select ref="salad"  className="browser-default">
+                  {this.state.salads.map((salad,i) => {
+                    return (<option key={i} value={salad.name}>{salad.name}</option> )
                   }
                 )
               }
-            </label>
-          </div>
-          <div>
-            <button type="button" onClick={() =>{this.addMenuItem("entree")}}>Add Entree</button>
-            <br/>
-            <label> Entrees:
-              <select ref="entree"  className="browser-default">
-                {this.state.entrees.map((entree,i) => {
-                  return (<option key={i} value={entree.name}>{entree.name}</option> )
+                </select>
+                <br/>
+                {this.state.menuSalads.map((something, i)=> {
+                  return (
+                    <div>
+                      <select ref="salad"  className="browser-default">
+                        {this.state.salads.map((salad,i) => {
+                          return (<option value={salad.name}>{salad.name}</option> )
+                            }
+                          )
+                        }
+                      </select>
+                      <br/>
+                    </div>)
+                    }
+                  )
                 }
-              )
-            }
-              </select>
+              </label>
+              <button className="btn btn-primary" type="button" onClick={() =>{this.addMenuItem("salad")}}>Add Salad</button>
+            </div>
+            <div className="col s3">
               <br/>
-              {this.state.menuEntrees.map((something, i)=> {
-                return (
-                  <div>
-                    <select ref="entree"  className="browser-default">
-                      {this.state.entrees.map((entree,i) => {
-                        return (<option value={entree.name}>{entree.name}</option> )
-                          }
-                        )
-                      }
-                    </select>
-                    <br/>
-                  </div>)
+              <label> Entrees:
+                <select ref="entree"  className="browser-default">
+                  {this.state.entrees.map((entree,i) => {
+                    return (<option key={i} value={entree.name}>{entree.name}</option> )
                   }
                 )
               }
-            </label>
-          </div>
-          <div>
-            <button type="button" onClick={() =>{this.addMenuItem("dessert")}}>Add Dessert</button>
-            <br/>
-            <label> Desserts:
-              <select ref="dessert"  className="browser-default">
-                {this.state.desserts.map((dessert,i) => {
-                  return (<option key={i} value={dessert.name}>{dessert.name}</option> )
+                </select>
+                <br/>
+                {this.state.menuEntrees.map((something, i)=> {
+                  return (
+                    <div>
+                      <select ref="entree"  className="browser-default">
+                        {this.state.entrees.map((entree,i) => {
+                          return (<option value={entree.name}>{entree.name}</option> )
+                            }
+                          )
+                        }
+                      </select>
+                      <br/>
+                    </div>)
+                    }
+                  )
                 }
-              )
-            }
-              </select>
+              </label>
+              <button className="btn btn-primary" type="button" onClick={() =>{this.addMenuItem("entree")}}>Add Entree</button>
+            </div>
+            <div className="col s3">
               <br/>
-              {this.state.menuDesserts.map((something, i)=> {
-                return (
-                  <div>
-                    <select ref="dessert"  className="browser-default">
-                      {this.state.desserts.map((dessert,i) => {
-                        return (<option value={dessert.name}>{dessert.name}</option> )
-                          }
-                        )
-                      }
-                    </select>
-                    <br/>
-                  </div>)
+              <label> Desserts:
+                <select ref="dessert"  className="browser-default">
+                  {this.state.desserts.map((dessert,i) => {
+                    return (<option key={i} value={dessert.name}>{dessert.name}</option> )
                   }
                 )
               }
-            </label>
+                </select>
+                <br/>
+                {this.state.menuDesserts.map((something, i)=> {
+                  return (
+                    <div>
+                      <select ref="dessert"  className="browser-default">
+                        {this.state.desserts.map((dessert,i) => {
+                          return (<option value={dessert.name}>{dessert.name}</option> )
+                            }
+                          )
+                        }
+                      </select>
+                      <br/>
+                    </div>)
+                    }
+                  )
+                }
+              </label>
+              <button className="btn btn-primary" type="button" onClick={() =>{this.addMenuItem("dessert")}}>Add Dessert</button>
+            </div>
           </div>
-          <label>
-            <input type="submit" value="Make a new menu"/>
-          </label>
+
+          <br/>
+          <br/>
+
+            <input className="btn btn-primary " type="submit" value="Make a new menu"/>
+
         </form>
       </section>
     );
