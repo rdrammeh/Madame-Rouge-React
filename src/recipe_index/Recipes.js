@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import RecipeTypes from './Types';
 import RecipeList from './List';
 import axios from 'axios';
-
+import {Tab, Tabs, TabList, TabPanel} from 'react-tabs';
 
 
 export default class Recipes extends Component {
@@ -33,9 +33,11 @@ export default class Recipes extends Component {
   };
   render() {
     return (
-      <div className="Recipes">
-        <RecipeTypes changeRecipes={this.changeRecipes}/>
-        <RecipeList recipes={this.state.recipes} changeRecipes={this.changeRecipes}/>
+      <div className="all-recipe-show">
+        <div className="Recipes">
+          <RecipeTypes changeRecipes={this.changeRecipes}/>
+          <RecipeList recipes={this.state.recipes} changeRecipes={this.changeRecipes}/>
+        </div>
       </div>
     );
   };

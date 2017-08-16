@@ -1,17 +1,16 @@
-import './App.css';
 import React, { Component } from 'react';
 import { Navbar, NavItem } from 'react-materialize';
-
+import './App.css'
 class Header extends Component {
   render() {
     return (
-      <div>
-        <Navbar brand='logo' right>
-    	     <NavItem href='get-started.html'>Recipes</NavItem>
-    	      <NavItem href='components.html'>Signup</NavItem>
-            <NavItem href='get-started.html'>Login</NavItem>
+      <header>
+        <Navbar brand='Madame Rouge' right className="transparent z-depth-0">
+    	     <NavItem href='/recipes'>Recipes</NavItem>
+    	      <NavItem href='/users/new'>Signup</NavItem>
+            <NavItem href='/sessions/new'>Login</NavItem>
           </Navbar>
-      </div>
+      </header>
     );
   }
 }
