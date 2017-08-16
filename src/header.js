@@ -21,7 +21,7 @@ class Header extends Component {
           <header>
             <Navbar brand='Madame Rouge' right className="transparent z-depth-0">
               <NavItem href='/recipes'>Recipes</NavItem>
-              <NavItem href="/users/{sessionStorage.userID}">Profile</NavItem>
+              <NavItem href={`/users/${sessionStorage.userId}`}>Profile</NavItem>
               {/* Future feature */}
               {/* <NavItem href='/sessions/new'>Log Out</NavItem> */}
               <NavItem href="/recipes/new">New Recipe</NavItem>

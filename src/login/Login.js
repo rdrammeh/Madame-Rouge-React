@@ -26,7 +26,8 @@ export default class Login extends Component {
 
   render() {
     return (
-      <div>
+      <div className="user-log-bg">
+        <div className="user-login-form">
         <form onSubmit={this.login} >
           <div>
             <input ref="email" className="email-login" required type="email" />
@@ -36,8 +37,9 @@ export default class Login extends Component {
             <input ref="password" className="password-login" required type="password" />
             <label htmlFor="password">Password</label>
           </div>
-          <input type="submit" value="Log in" />
+          <input className="btn btn-primary" type="submit" value="Log in" />
         </form>
+      </div>
       </div>
     );
   }
