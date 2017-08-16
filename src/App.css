@@ -72,7 +72,13 @@ h2 {
   left: 10%;
   background: linear-gradient(to top, rgba(0,0,0,0)12%, rgba(0,0,0,0.8));
   height: 85%;
+  overflow-y: scroll;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
+
 
 .menu-list {
   text-align: center;
