@@ -71,7 +71,7 @@ componentDidMount(){
 
   render() {
     return (
-      <div>
+      <div className="admin-show">
         <h1>Welcome, Madame Rouge</h1>
         <div id="admin_current_menu">
           <p><i>Current Menu</i></p>
