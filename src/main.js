@@ -21,7 +21,7 @@ class Main extends Component {
           <Route exact path="/users/new" component={NewUser}/>
           <Route exact path="/recipes/new" component={RecipeForm}/>
           <Route exact path="/sessions/new" component={Login}/>
-          <Route exact path="/menu/new" component={MenuForm}/> 
+          <Route exact path="/menus/new" component={MenuForm}/> 
           <Route path="/users/:id" component={ShowUser}/>
           <Route path="/recipes/:id" component={Show}/>
           <Route path="/admin" component={AdminShow}/>
