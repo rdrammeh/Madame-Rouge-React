@@ -18,10 +18,10 @@ export default class RecipeForm extends Component {
     let axiosIngredients = this.state.ingredients
     newArray.push(id);
     id++
-    axiosIngredients.push({ingredient:{
+    axiosIngredients.push({
       amount: this.refs.amount.value,
       measurement: this.refs.measurement.value,
-      item: this.refs.item.value}})
+      item: this.refs.item.value})
     this.setState({ingredientsList: newArray, ingredient: axiosIngredients, id: id  })
   }
 
@@ -29,10 +29,9 @@ export default class RecipeForm extends Component {
     event.preventDefault();
       let axiosIngredients = this.state.ingredients
       axiosIngredients.push({
-        ingredient:{
         amount: this.refs.amount.value,
         measurement: this.refs.measurement.value,
-        item: this.refs.item.value}})
+        item: this.refs.item.value})
     axios.post('http://localhost:8080/recipes', {recipe: {
       name: this.refs.name.value,
       dish_type: this.refs.dish_type.value,
