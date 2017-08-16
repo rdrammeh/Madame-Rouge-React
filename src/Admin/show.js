@@ -54,7 +54,7 @@ componentDidMount(){
   removeItem(id){
     axios({
       method: "delete",
-      url: 'http://localhost:8080/menuitems/'+this.state.activemenuId,
+      url: 'https://madamerouge8080.herokuapp.com/menuitems/'+this.state.activemenuId,
       params: {
         recipe_id: id,
         menu_id: this.state.activemenuId

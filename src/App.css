@@ -314,3 +314,16 @@ button.btn:hover{
   float:left;
   color:white;
 }
+
+.user-log-bg {
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  position: fixed;
+  background: linear-gradient(0deg,rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url("imgs/pizza.jpg");
+  background-size: cover;
+}
