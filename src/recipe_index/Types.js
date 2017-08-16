@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Tab, Tabs, TabList} from 'react-tabs';
 
 export default class RecipeTypes extends Component {
   constructor (){
@@ -9,13 +10,15 @@ export default class RecipeTypes extends Component {
   }
   render() {
     return (
+      <Tabs>
       <div className="Recipe-types">
-        <ul>
+        <TabList id="tabular" className= "remove-border">
         {this.state.types.map((type, i) => {
-          return (<li key={i}><a onClick={() => {this.props.changeRecipes(type)}}> {type} </a> </li> )
+          return <Tab className="remove-border"><a key={i} onClick={() => {this.props.changeRecipes(type)}}> {type}</a></Tab>
         })}
-        </ul>
+      </TabList>
       </div>
+    </Tabs>
     );
   }
 }
