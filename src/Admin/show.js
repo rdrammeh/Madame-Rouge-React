@@ -10,24 +10,22 @@ export default class AdminShow extends Component{
       allmenus: [],
       currentmenu: [],
       activemenu: []
-    }
-    this.onMenuClick = this.onMenuClick.bind(this)
+    };
+    this.onMenuClick = this.onMenuClick.bind(this);
   }
 onMenuClick(id){
-  axios.get(`http://localhost:8080/menus/`+ id)
+  axios.get(`http://localhost:8080/menus/`+id)
   .then((response) => {
     let activemenu = response.data.menu_items.map(function(item){
       return {id: item.id, name: item.name}
-    })
-      this.setState(
-        { activemenu: activemenu }
-      )
-  })
-
+      }
+    );
+    this.setState({ activemenu: activemenu });
+    }
+  )
 }
 
 componentDidMount(){
-
   axios.get('http://localhost:8080')
   .then((response) => {
     let currentmenu = response.data.menu_items.map(function(item){
