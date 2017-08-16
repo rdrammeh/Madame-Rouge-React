@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+
 export default class RecipeForm extends Component {
   constructor(){
     super()
@@ -18,10 +19,10 @@ export default class RecipeForm extends Component {
     let axiosIngredients = this.state.ingredients
     newArray.push(id);
     id++
-    axiosIngredients.push({ingredient:{
+    axiosIngredients.push({
       amount: this.refs.amount.value,
       measurement: this.refs.measurement.value,
-      item: this.refs.item.value}})
+      item: this.refs.item.value})
     this.setState({ingredientsList: newArray, ingredient: axiosIngredients, id: id  })
   }
 
@@ -29,10 +30,9 @@ export default class RecipeForm extends Component {
     event.preventDefault();
       let axiosIngredients = this.state.ingredients
       axiosIngredients.push({
-        ingredient:{
         amount: this.refs.amount.value,
         measurement: this.refs.measurement.value,
-        item: this.refs.item.value}})
+        item: this.refs.item.value})
     axios.post('http://localhost:8080/recipes', {recipe: {
       name: this.refs.name.value,
       dish_type: this.refs.dish_type.value,
@@ -40,9 +40,9 @@ export default class RecipeForm extends Component {
       directions: this.refs.directions.value,
       preptime: this.refs.preptime.value,
       user: {}
-    }, ingredients: axiosIngredients, user: sessionStorage.userId})
+    }, ingredients: axiosIngredients})
       .then((response) =>{
-        if (response.status === 200) {
+        if (response.status === 204) {
           this.props.history.push('/recipes');
           }
         }
@@ -57,21 +57,22 @@ export default class RecipeForm extends Component {
             <input ref="name" type="text" />
           </label>
           <br/>
-          <label> Dish Type:   </label>
-            <select className="browser-default" ref="dish_type" name="DishType">
+          <label> Dish Type:
+            <select ref="dish_type" name="DishType" className="browser-default">
               <option value="appetizer">Appetizer</option>
               <option value="salad">Salad</option>
               <option value="main course">Main Course</option>
               <option value="desserts">Desserts</option>
             </select>
-
+          </label>
           <br/>
-          <label> Difficulty: </label>
-            <select className="browser-default" ref="difficulty" name="rec">
+          <label> Difficulty:
+            <select ref="difficulty" name="rec" className="browser-default">
               <option value="easy">Easy</option>
               <option value="medium">Medium</option>
               <option value="hard">Hard</option>
             </select>
+          </label>
           <br/>
           <label> Directions:
             <textarea ref="directions" id="new-recipe" cols="30" rows="5" maxLength="140" name="recipe"></textarea>
@@ -123,23 +124,3 @@ export default class RecipeForm extends Component {
     );
   }
 }
- class IngredientInput extends Component {
-  render() {
-    return (
-      <div>
-        <label>Ingredient:
-          <br/>
-          <label>Amount:
-              <input ref="amount" type="text"/>
-          </label>
-          <label>Measurement:
-            <input ref="measurement" type="text"/>
-          </label>
-          <label>Item:
-            <input ref="item" type="text"/>
-          </label>
-        </label>
-      </div>
-      );
-    }
-  }
