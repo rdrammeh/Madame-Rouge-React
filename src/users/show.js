@@ -22,7 +22,7 @@ class ShowUser extends Component {
 
     let {recipes} = this.state.recipes ? this.state.recipes : [];
     return (
-      <div className="recipe-show-page">
+      <div className="user-show-page">
         <p>Welcome {username}</p>
         {this.state.recipes.map(function(item, index){
           return <p key={ index }>{item.dish_type}: {item.name}</p>

@@ -57,22 +57,21 @@ export default class RecipeForm extends Component {
             <input ref="name" type="text" />
           </label>
           <br/>
-          <label> Dish Type:
-            <select ref="dish_type" name="DishType">
+          <label> Dish Type:   </label>
+            <select className="browser-default" ref="dish_type" name="DishType">
               <option value="appetizer">Appetizer</option>
               <option value="salad">Salad</option>
               <option value="main course">Main Course</option>
               <option value="desserts">Desserts</option>
             </select>
-          </label>
+
           <br/>
-          <label> Difficulty:
-            <select ref="difficulty" name="rec">
+          <label> Difficulty: </label>
+            <select className="browser-default" ref="difficulty" name="rec">
               <option value="easy">Easy</option>
               <option value="medium">Medium</option>
               <option value="hard">Hard</option>
             </select>
-          </label>
           <br/>
           <label> Directions:
             <textarea ref="directions" id="new-recipe" cols="30" rows="5" maxLength="140" name="recipe"></textarea>

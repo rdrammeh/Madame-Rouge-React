@@ -6,6 +6,7 @@ import NewUser from './usersnew/newuser'
 import Show from './recipeshow/show'
 import Login from './login/Login'
 import ShowUser from './users/show'
+import RecipeForm from './recipe_new/recipe_form'
 
 
 class Main extends Component {
@@ -15,10 +16,10 @@ class Main extends Component {
         <Switch>
           <Route exact path="/" component={Homepage}/>
           <Route exact path="/recipes" component={Recipes}/>
-          <Route path="/sessions/new" component={Login}/>
+          <Route exact path="/recipes/new" component={RecipeForm}/>
+          <Route exact path="/users/new" component={NewUser}/>
+          <Route exact path="/sessions/new" component={Login}/>
           <Route path="/users/:id" component={ShowUser}/>
-          <Route path="/users/new" component={NewUser}/>
-          <Route path="/sessions/new" component={Login}/>
           <Route path="/recipes/:id" component={Show}/>
 
         </Switch>
