@@ -5,6 +5,8 @@ import Recipes from './recipe_index/Recipes';
 import NewUser from './usersnew/newuser'
 import Show from './recipeshow/show'
 import Login from './login/Login'
+import ShowUser from './users/show'
+
 
 class Main extends Component {
   render() {
@@ -12,11 +14,13 @@ class Main extends Component {
       <div>
         <Switch>
           <Route exact path="/" component={Homepage}/>
-          {/* <Route path="/users/:id" component={Login}/> */}
           <Route exact path="/recipes" component={Recipes}/>
+          <Route path="/sessions/new" component={Login}/>
+          <Route path="/users/:id" component={ShowUser}/>
           <Route path="/users/new" component={NewUser}/>
           <Route path="/sessions/new" component={Login}/>
           <Route path="/recipes/:id" component={Show}/>
+
         </Switch>
       </div>
     );
