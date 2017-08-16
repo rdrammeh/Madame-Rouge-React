@@ -26,7 +26,8 @@ export default class NewUser extends Component {
 
   render() {
     return (
-      <div className="new-user container">
+      <div className="new-user">
+        <div className="new-user-form">
         <form onSubmit={this.createUser} >
           <div className="Input">
             <label htmlFor="username">Username</label>
@@ -42,6 +43,7 @@ export default class NewUser extends Component {
           </div>
           <button className="btn waves-effect waves-light" type="submit" name="action">Register</button>
 				</form>
+      </div>
       </div>
     );
   }
