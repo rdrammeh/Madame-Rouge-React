@@ -333,3 +333,11 @@ button.btn:hover{
   background: linear-gradient(0deg,rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url("imgs/pizza.jpg");
   background-size: cover;
 }
+
+.make-smaller {
+ width: 20px;
+ height: 20px;
+ margin-left: 5px;
+ line-height: 17px;
+ font-size: 20px;
+}

@@ -4,12 +4,15 @@ import './App.css'
 import axios from 'axios'
 class Header extends Component {
   logOut(){
-
+    debugger
+    sessionStorage.clear()
     axios.get('https://madamerouge8080.herokuapp.com/logout')
     .then((response) =>{
       sessionStorage.clear()
-      }
-    )
+    })
+    .catch((response) =>{
+      sessionStorage.clear()
+    })
   }
   render() {
 
